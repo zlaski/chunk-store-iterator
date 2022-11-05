@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  block-iterator: ^1.0.0
+
+dependencies:
+  block-iterator: 1.0.0
+
+packages:
+
+  /block-iterator/1.0.0:
+    resolution: {integrity: sha512-UiR1HTmyCCuE1BGDH4vkOPbQdjnwgnVz9AZPyB+2ejAH0y3oHfWiUmCMTLGbqYKe9ZmWssG527d/cBJASTTg/A==}
+    dev: false
