@@ -25,8 +25,9 @@ async function * chunkStoreRead (store, opts = {}) {
   let index = Math.floor(offset / chunkLength)
   const chunkOffset = offset % chunkLength
   if (offset) {
-    length -= chunkLength - chunkOffset
-    yield get(index++, chunkLength - chunkOffset, chunkOffset)
+    const target = Math.min(length, chunkLength - chunkOffset)
+    length -= target
+    yield get(index++, target, chunkOffset)
   }
 
   for (let remainingLength = length; remainingLength > 0; ++index, remainingLength -= chunkLength) {
@@ -48,7 +49,7 @@ async function chunkStoreWrite (store, stream, opts = {}) {
   let cb = () => {}
   let ended = false
 
-  for await (const chunk of blockIterator(stream, chunkLength, { zeroPadding: false })) {
+  for await (const chunk of blockIterator(stream, chunkLength, { zeroPadding: opts.zeroPadding || false })) {
     await new Promise(resolve => {
       if (outstandingPuts++ <= storeMaxOutstandingPuts) resolve()
       store.put(index++, chunk, err => {
