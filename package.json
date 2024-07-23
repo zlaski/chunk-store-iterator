@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThaUnknown/chunk-store-iterator.git"
+    "url": "git+https://github.com/zlaski/chunk-store-iterator.git"
   },
   "keywords": [
     "async",
@@ -39,10 +39,10 @@
     "write",
     "convert"
   ],
-  "author": "ThaUnknown",
+  "author": "zlaski",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ThaUnknown/chunk-store-iterator/issues"
+    "url": "https://github.com/zlaski/chunk-store-iterator/issues"
   },
-  "homepage": "https://github.com/ThaUnknown/chunk-store-iterator#readme"
+  "homepage": "https://github.com/zlaski/chunk-store-iterator#readme"
 }
